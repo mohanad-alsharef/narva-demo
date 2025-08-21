@@ -1,0 +1,32 @@
+# Project Brief: Narva Perfume Website
+
+## Project Overview
+Creating a modern, responsive website for Narva perfume brand to showcase luxury fragrance products with focus on UI/UX design and user experience.
+
+## Core Requirements
+- **Technology Stack**: Simple HTML, CSS, JavaScript only
+- **Pages**: Home, About Us, FAQ
+- **Design**: Modern, responsive (mobile/tablet friendly) 
+- **Target Audience**: Clients interested in luxury perfumes
+- **Theme**: Grey, white, and black color scheme
+- **Deployment**: GitHub Pages
+
+## Business Goals
+- Showcase Narva perfume product line (12 fragrances)
+- Create compelling brand presence online
+- Attract potential customers through modern design
+- Provide product information and brand story
+- Future integration with external e-commerce links
+
+## Key Constraints
+- No backend required - frontend prototype only
+- No customer comments/reviews feature
+- Simple technology stack (HTML/CSS/JS)
+- Must be GitHub-ready for deployment
+
+## Success Criteria
+- Modern, professional perfume e-commerce design
+- Fully responsive across all devices
+- Clean, elegant user interface
+- Proper brand identity implementation
+- Ready for GitHub deployment

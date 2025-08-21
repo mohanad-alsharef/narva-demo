@@ -1,0 +1,45 @@
+# Technical Context: Narva Website
+
+## Technologies Used
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **Styling**: CSS Grid, Flexbox for responsive layouts
+- **Assets**: Compressed images (.jpg format)
+- **Deployment**: GitHub Pages
+- **Version Control**: Git/GitHub
+
+## Development Setup
+- **Local Development**: Any web browser for testing
+- **Asset Organization**: `/assets/compress-images/` directory
+- **Code Structure**: Separate HTML, CSS, JS files
+- **Image Assets**: Pre-compressed product images available
+
+## Technical Constraints
+- **No Backend**: Static website only
+- **No Frameworks**: Pure HTML/CSS/JS (no React, Vue, etc.)
+- **No Build Process**: Direct file serving
+- **No Database**: All content hardcoded in HTML/JS
+- **Cross-Browser**: Support for modern browsers
+
+## Dependencies
+- **None**: No external libraries or frameworks
+- **Fonts**: Google Fonts or web-safe fonts
+- **Images**: Local asset files only
+- **Icons**: CSS-based or SVG icons preferred
+
+## Performance Considerations
+- **Image Optimization**: Use compressed images from assets folder
+- **CSS Organization**: Modular CSS structure
+- **JavaScript**: Minimal JS for interactions
+- **Loading**: Optimize for fast initial page load
+
+## Browser Support
+- **Modern Browsers**: Chrome, Firefox, Safari, Edge
+- **Mobile Browsers**: iOS Safari, Chrome Mobile
+- **Responsive**: Mobile-first approach
+- **Progressive Enhancement**: Basic functionality without JS
+
+## Future Technical Considerations
+- **E-commerce Integration**: External links to shopping platforms
+- **CMS Integration**: Potential future content management
+- **Analytics**: Google Analytics integration capability
+- **SEO**: Meta tags and semantic HTML structure

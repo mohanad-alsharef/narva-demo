@@ -1,0 +1,69 @@
+# System Patterns: Narva Website Architecture
+
+## Design Patterns
+- **Mobile-First Responsive**: Design for mobile, enhance for desktop
+- **Grid-Based Layout**: CSS Grid for product showcases
+- **Card Components**: Individual product cards with consistent structure
+- **Hero Section**: Large banner with brand messaging
+- **Navigation**: Sticky header with mobile hamburger menu
+
+## Component Structure
+```
+├── Header Component
+│   ├── Logo
+│   ├── Navigation Menu
+│   └── Mobile Menu Toggle
+├── Hero Section
+│   ├── Brand Tagline
+│   ├── Featured Product
+│   └── Call-to-Action
+├── Product Grid
+│   ├── Product Cards
+│   │   ├── Product Image
+│   │   ├── Product Name
+│   │   ├── Fragrance Notes
+│   │   └── Description
+├── About Section
+│   ├── Brand Story
+│   └── Brand Values
+├── FAQ Section
+│   ├── Accordion Components
+│   └── Question/Answer Pairs
+└── Footer Component
+    ├── Contact Information
+    ├── Social Links
+    └── Copyright
+```
+
+## Styling Approach
+- **CSS Variables**: Define brand colors and typography
+- **BEM Methodology**: Block-Element-Modifier naming
+- **Utility Classes**: Reusable spacing and typography
+- **Component Isolation**: Self-contained component styles
+
+## Brand Identity Integration
+- **Color Palette**: Extracted from logo and product images
+- **Typography**: Luxury-focused font selections
+- **Imagery**: Consistent product photography style
+- **Spacing**: Generous whitespace for premium feel
+
+## Responsive Breakpoints
+```css
+/* Mobile First */
+.container { /* Base mobile styles */ }
+
+/* Tablet */
+@media (min-width: 768px) { /* Tablet styles */ }
+
+/* Desktop */
+@media (min-width: 1024px) { /* Desktop styles */ }
+
+/* Large Desktop */
+@media (min-width: 1440px) { /* Large screen styles */ }
+```
+
+## JavaScript Patterns
+- **Progressive Enhancement**: Core functionality without JS
+- **Event Delegation**: Efficient event handling
+- **Module Pattern**: Organized, reusable JS components
+- **Mobile Interactions**: Touch-friendly interactions

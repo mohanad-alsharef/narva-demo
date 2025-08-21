@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NARVA - Luxury Fragrances. Discover our collection of premium perfumes crafted with the finest ingredients.">
+    <meta name="keywords" content="narva, perfume, luxury fragrance, oud, leather, floral scents">
+    <title>NARVA - Luxury Fragrances</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./assets/NARVA-LOGO.jpg" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/NARVA-LOGO.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav__logo">
+                    <img src="./assets/NARVA-LOGO.jpg" alt="NARVA" class="nav__logo-img">
+                </div>
+                
+                <ul class="nav__menu" id="nav-menu">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#collection" class="nav__link">Collection</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#faq" class="nav__link">FAQ</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        Discover the Art of
+                        <span class="hero__title-accent">Luxury Fragrance</span>
+                    </h1>
+                    <p class="hero__description">
+                        NARVA presents an exquisite collection of premium perfumes, 
+                        each crafted with the finest ingredients to create unforgettable scent experiences.
+                    </p>
+                    <a href="#collection" class="hero__cta btn btn--primary">
+                        Explore Collection
+                    </a>
+                </div>
+                <div class="hero__image">
+                    <img src="./assets/compress-images/1Z1A4953.jpg" alt="NARVA Luxury Perfume" class="hero__img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Collection -->
+        <section class="featured" id="featured">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Featured Fragrances</h2>
+                    <p class="section__subtitle">Discover our most popular scents</p>
+                </div>
+                
+                <div class="featured__grid">
+                    <div class="featured__card">
+                        <div class="featured__image">
+                            <img src="./assets/compress-images/narva-leather-1.jpg" alt="NARVA Leather" class="featured__img">
+                        </div>
+                        <div class="featured__content">
+                            <h3 class="featured__name">NARVA Leather</h3>
+                            <p class="featured__tagline">Bold. Smooth. Unforgettable.</p>
+                            <p class="featured__notes">Raspberry • Saffron • Leather • Vanilla</p>
+                        </div>
+                    </div>
+                    
+                    <div class="featured__card">
+                        <div class="featured__image">
+                            <img src="./assets/compress-images/narva-ouda-1.jpg" alt="NARVA Ouda" class="featured__img">
+                        </div>
+                        <div class="featured__content">
+                            <h3 class="featured__name">NARVA Ouda</h3>
+                            <p class="featured__tagline">Opulent. Exotic. Captivating.</p>
+                            <p class="featured__notes">Passion Fruit • Oud • Amber • Vanilla</p>
+                        </div>
+                    </div>
+                    
+                    <div class="featured__card">
+                        <div class="featured__image">
+                            <img src="./assets/compress-images/yanu-1.jpg" alt="Yano" class="featured__img">
+                        </div>
+                        <div class="featured__content">
+                            <h3 class="featured__name">Yano</h3>
+                            <p class="featured__tagline">Fresh. Playful. Uplifting.</p>
+                            <p class="featured__notes">Yuzu • Orange Blossom • Sandalwood</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full Collection -->
+        <section class="collection" id="collection">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Complete Collection</h2>
+                    <p class="section__subtitle">Explore all NARVA fragrances</p>
+                </div>
+                
+                <div class="collection__grid" id="collection-grid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about__container">
+                    <div class="about__content">
+                        <h2 class="section__title">About NARVA</h2>
+                        <p class="about__text">
+                            NARVA represents the pinnacle of luxury fragrance craftsmanship. Our collection 
+                            of premium perfumes is meticulously crafted using the finest ingredients sourced 
+                            from around the world.
+                        </p>
+                        <p class="about__text">
+                            Each NARVA fragrance tells a unique story, from the bold sophistication of 
+                            NARVA Leather to the exotic allure of NARVA Ouda. We believe that fragrance 
+                            is an art form that should evoke emotions and create lasting memories.
+                        </p>
+                        <div class="about__features">
+                            <div class="about__feature">
+                                <h3 class="about__feature-title">Premium Ingredients</h3>
+                                <p class="about__feature-text">Sourced from the finest suppliers worldwide</p>
+                            </div>
+                            <div class="about__feature">
+                                <h3 class="about__feature-title">Expert Craftsmanship</h3>
+                                <p class="about__feature-text">Each fragrance carefully composed by master perfumers</p>
+                            </div>
+                            <div class="about__feature">
+                                <h3 class="about__feature-title">Luxury Experience</h3>
+                                <p class="about__feature-text">Designed to create unforgettable scent memories</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__image">
+                        <img src="./assets/compress-images/1Z1A4972.jpg" alt="NARVA Craftsmanship" class="about__img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Frequently Asked Questions</h2>
+                    <p class="section__subtitle">Everything you need to know about NARVA fragrances</p>
+                </div>
+                
+                <div class="faq__container">
+                    <div class="faq__item">
+                        <button class="faq__header">
+                            <span class="faq__title">What makes NARVA fragrances unique?</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__content">
+                            <p class="faq__text">
+                                NARVA fragrances are crafted with premium ingredients and expert artisanship. 
+                                Each scent is carefully composed to create a unique olfactory experience that 
+                                reflects luxury and sophistication.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__header">
+                            <span class="faq__title">How long do NARVA perfumes last?</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__content">
+                            <p class="faq__text">
+                                Our Eau de Parfum concentration ensures long-lasting wear, typically 6-8 hours 
+                                depending on skin type and environmental conditions. Some of our richer 
+                                compositions like NARVA Ouda can last even longer.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__header">
+                            <span class="faq__title">Are NARVA fragrances suitable for both men and women?</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__content">
+                            <p class="faq__text">
+                                Most of our collection features unisex fragrances designed to be enjoyed by 
+                                anyone who appreciates fine perfumery. Some scents like NARVA Layla are 
+                                specifically crafted with feminine preferences in mind.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__header">
+                            <span class="faq__title">What size bottles are available?</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__content">
+                            <p class="faq__text">
+                                All NARVA fragrances are available in 100ml bottles with Eau de Parfum 
+                                concentration, providing excellent value and longevity for your investment 
+                                in luxury fragrance.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__header">
+                            <span class="faq__title">How should I store my NARVA perfume?</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__content">
+                            <p class="faq__text">
+                                Store your perfume in a cool, dry place away from direct sunlight and 
+                                extreme temperatures. Keep the bottle upright and tightly closed to 
+                                maintain the fragrance's integrity and longevity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__content">
+                    <div class="footer__logo">
+                        <img src="./assets/NARVA-LOGO.jpg" alt="NARVA" class="footer__logo-img">
+                    </div>
+                    <p class="footer__description">
+                        Luxury fragrances crafted with passion and precision.
+                    </p>
+                </div>
+                
+                <div class="footer__info">
+                    <h3 class="footer__title">Contact</h3>
+                    <p class="footer__text">Coming Soon</p>
+                </div>
+                
+                <div class="footer__links">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__list">
+                        <li><a href="#home" class="footer__link">Home</a></li>
+                        <li><a href="#collection" class="footer__link">Collection</a></li>
+                        <li><a href="#about" class="footer__link">About</a></li>
+                        <li><a href="#faq" class="footer__link">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    &copy; 2024 NARVA. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
