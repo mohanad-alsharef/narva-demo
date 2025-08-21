@@ -7,6 +7,10 @@
     <meta name="keywords" content="narva, perfume, luxury fragrance, oud, leather, floral scents">
     <title>NARVA - Luxury Fragrances</title>
     
+    <!-- Language support -->
+    <meta name="language" content="en">
+    <meta name="alternate-language" content="ar">
+    
     <!-- Preload critical resources -->
     <link rel="preload" href="./assets/NARVA-LOGO.jpg" as="image">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style">
@@ -31,18 +35,31 @@
                 
                 <ul class="nav__menu" id="nav-menu">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">Home</a>
+                        <a href="#home" class="nav__link active-link" data-en="Home" data-ar="الرئيسية">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#collection" class="nav__link">Collection</a>
+                        <a href="#collection" class="nav__link" data-en="Collection" data-ar="المجموعة">Collection</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link">About</a>
+                        <a href="#about" class="nav__link" data-en="About" data-ar="حول">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#faq" class="nav__link">FAQ</a>
+                        <a href="#faq" class="nav__link" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link" data-en="Contact" data-ar="اتصل بنا">Contact</a>
                     </li>
                 </ul>
+                
+                <div class="nav__actions">
+                    <button class="language-toggle" id="language-toggle" data-current="en">
+                        <span class="lang-text" data-en="EN" data-ar="عربي">EN</span>
+                    </button>
+                    <button class="cart-toggle" id="cart-toggle">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                </div>
                 
                 <div class="nav__toggle" id="nav-toggle">
                     <span class="nav__toggle-line"></span>
@@ -178,8 +195,8 @@
         <section class="faq" id="faq">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Frequently Asked Questions</h2>
-                    <p class="section__subtitle">Everything you need to know about NARVA fragrances</p>
+                    <h2 class="section__title" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h2>
+                    <p class="section__subtitle" data-en="Everything you need to know about NARVA fragrances" data-ar="كل ما تحتاج معرفته عن عطور نارفا">Everything you need to know about NARVA fragrances</p>
                 </div>
                 
                 <div class="faq__container">
@@ -255,6 +272,51 @@
                 </div>
             </div>
         </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
+                    <p class="section__subtitle" data-en="Get in touch for inquiries and orders" data-ar="تواصل معنا للاستفسارات والطلبات">Get in touch for inquiries and orders</p>
+                </div>
+                
+                <div class="contact__container">
+                    <div class="contact__info">
+                        <div class="contact__item">
+                            <h3 data-en="Email" data-ar="البريد الإلكتروني">Email</h3>
+                            <p>info@narva.com</p>
+                        </div>
+                        <div class="contact__item">
+                            <h3 data-en="Phone" data-ar="الهاتف">Phone</h3>
+                            <p>+966 50 123 4567</p>
+                        </div>
+                        <div class="contact__item">
+                            <h3 data-en="Address" data-ar="العنوان">Address</h3>
+                            <p data-en="Riyadh, Saudi Arabia" data-ar="الرياض، المملكة العربية السعودية">Riyadh, Saudi Arabia</p>
+                        </div>
+                    </div>
+                    
+                    <form class="contact__form" id="contact-form">
+                        <div class="form__group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+                        </div>
+                        <div class="form__group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message" data-en="Message" data-ar="الرسالة">Message</label>
+                        </div>
+                        <button type="submit" class="btn btn--primary" data-en="Send Message" data-ar="إرسال الرسالة">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -293,6 +355,36 @@
             </div>
         </div>
     </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3 class="cart-title" data-en="Shopping Cart" data-ar="سلة التسوق">Shopping Cart</h3>
+            <button class="cart-close" id="cart-close">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-en="Total:" data-ar="المجموع:">Total:</span>
+                <span class="cart-total-amount" id="cart-total">$0.00</span>
+            </div>
+            <button class="btn btn--primary checkout-btn" id="checkout-btn" data-en="Checkout" data-ar="إتمام الطلب">
+                Checkout
+            </button>
+        </div>
+    </div>
+    
+    <!-- Product Quick View Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">×</button>
+            <div class="modal-body" id="modal-body">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>

@@ -1,5 +1,8 @@
 /* ===== NARVA WEBSITE JAVASCRIPT ===== */
 
+// Language support
+let currentLanguage = 'en';
+
 // Product data from the CSV file
 const products = [
   {
@@ -164,6 +167,21 @@ const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.querySelectorAll('.nav__link');
 const faqItems = document.querySelectorAll('.faq__item');
 const collectionGrid = document.getElementById('collection-grid');
+const languageToggle = document.getElementById('language-toggle');
+const cartToggle = document.getElementById('cart-toggle');
+const cartSidebar = document.getElementById('cart-sidebar');
+const cartClose = document.getElementById('cart-close');
+const cartItems = document.getElementById('cart-items');
+const cartCount = document.getElementById('cart-count');
+const cartTotal = document.getElementById('cart-total');
+const checkoutBtn = document.getElementById('checkout-btn');
+const productModal = document.getElementById('product-modal');
+const modalClose = document.getElementById('modal-close');
+const modalBody = document.getElementById('modal-body');
+const contactForm = document.getElementById('contact-form');
+
+/* ===== SHOPPING CART ===== */
+let cart = JSON.parse(localStorage.getItem('narva-cart')) || [];
 
 /* ===== MOBILE NAVIGATION ===== */
 function initMobileNavigation() {
@@ -293,11 +311,20 @@ function createProductCard(product) {
       <h3 class="product__name">${product.name}</h3>
       <p class="product__tagline">${product.tagline}</p>
       <p class="product__notes">
-        <strong>Top:</strong> ${product.topNotes}<br>
-        <strong>Heart:</strong> ${product.heartNotes}<br>
-        <strong>Base:</strong> ${product.baseNotes}
+        <strong>${currentLanguage === 'ar' ? 'البداية:' : 'Top:'}</strong> ${product.topNotes}<br>
+        <strong>${currentLanguage === 'ar' ? 'القلب:' : 'Heart:'}</strong> ${product.heartNotes}<br>
+        <strong>${currentLanguage === 'ar' ? 'القاعدة:' : 'Base:'}</strong> ${product.baseNotes}
       </p>
       <p class="product__description">${product.description}</p>
+      <div class="product__price">$$299.00</div>
+      <div class="product__actions">
+        <button class="btn btn--primary btn--small" onclick="addToCart(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+          ${currentLanguage === 'ar' ? 'إضافة إلى السلة' : 'Add to Cart'}
+        </button>
+        <button class="btn btn--secondary btn--small" onclick="showProductModal(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+          ${currentLanguage === 'ar' ? 'عرض التفاصيل' : 'View Details'}
+        </button>
+      </div>
     </div>
   `;
   
@@ -420,6 +447,236 @@ const debouncedScrollHandler = debounce(() => {
 
 window.addEventListener('scroll', debouncedScrollHandler);
 
+/* ===== LANGUAGE SWITCHING ===== */
+function initLanguageSwitching() {
+  languageToggle.addEventListener('click', () => {
+    currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+    updateLanguage();
+    localStorage.setItem('narva-language', currentLanguage);
+  });
+  
+  // Load saved language preference
+  const savedLanguage = localStorage.getItem('narva-language');
+  if (savedLanguage) {
+    currentLanguage = savedLanguage;
+    updateLanguage();
+  }
+}
+
+function updateLanguage() {
+  // Update document direction
+  document.documentElement.setAttribute('dir', currentLanguage === 'ar' ? 'rtl' : 'ltr');
+  
+  // Update language toggle
+  languageToggle.setAttribute('data-current', currentLanguage);
+  
+  // Update all translatable elements
+  const translatableElements = document.querySelectorAll('[data-en][data-ar]');
+  translatableElements.forEach(element => {
+    element.textContent = element.getAttribute(`data-${currentLanguage}`);
+  });
+  
+  // Update cart count
+  updateCartCount();
+}
+
+/* ===== SHOPPING CART FUNCTIONS ===== */
+function initShoppingCart() {
+  cartToggle.addEventListener('click', () => {
+    cartSidebar.classList.add('open');
+  });
+  
+  cartClose.addEventListener('click', () => {
+    cartSidebar.classList.remove('open');
+  });
+  
+  checkoutBtn.addEventListener('click', () => {
+    if (cart.length > 0) {
+      alert(currentLanguage === 'ar' ? 'سيتم توجيهك إلى صفحة الدفع' : 'Redirecting to checkout...');
+      // Here you would integrate with your payment processor
+    } else {
+      alert(currentLanguage === 'ar' ? 'السلة فارغة' : 'Cart is empty');
+    }
+  });
+  
+  // Close cart when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!cartSidebar.contains(e.target) && !cartToggle.contains(e.target)) {
+      cartSidebar.classList.remove('open');
+    }
+  });
+  
+  updateCartCount();
+  renderCart();
+}
+
+function addToCart(product) {
+  const existingItem = cart.find(item => item.id === product.id);
+  
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      ...product,
+      quantity: 1,
+      price: 299 // Default price in USD
+    });
+  }
+  
+  saveCart();
+  updateCartCount();
+  renderCart();
+  
+  // Show success message
+  const message = currentLanguage === 'ar' ? 'تم إضافة المنتج إلى السلة' : 'Product added to cart';
+  showNotification(message, 'success');
+}
+
+function removeFromCart(productId) {
+  cart = cart.filter(item => item.id !== productId);
+  saveCart();
+  updateCartCount();
+  renderCart();
+}
+
+function updateQuantity(productId, newQuantity) {
+  const item = cart.find(item => item.id === productId);
+  if (item) {
+    if (newQuantity <= 0) {
+      removeFromCart(productId);
+    } else {
+      item.quantity = newQuantity;
+      saveCart();
+      updateCartCount();
+      renderCart();
+    }
+  }
+}
+
+function saveCart() {
+  localStorage.setItem('narva-cart', JSON.stringify(cart));
+}
+
+function updateCartCount() {
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  cartCount.textContent = totalItems;
+}
+
+function renderCart() {
+  if (cart.length === 0) {
+    cartItems.innerHTML = `<p class="empty-cart">${currentLanguage === 'ar' ? 'السلة فارغة' : 'Cart is empty'}</p>`;
+    cartTotal.textContent = '$0.00';
+    return;
+  }
+  
+  cartItems.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <div class="cart-item-image">
+        <img src="${item.image}" alt="${item.name}">
+      </div>
+      <div class="cart-item-details">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+        <div class="cart-item-quantity">
+          <button onclick="updateQuantity('${item.id}', ${item.quantity - 1})">-</button>
+          <span>${item.quantity}</span>
+          <button onclick="updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
+        </div>
+      </div>
+      <button class="cart-item-remove" onclick="removeFromCart('${item.id}')">
+        ${currentLanguage === 'ar' ? 'حذف' : 'Remove'}
+      </button>
+    </div>
+  `).join('');
+  
+  const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  cartTotal.textContent = `$${total.toFixed(2)}`;
+}
+
+/* ===== PRODUCT MODAL ===== */
+function initProductModal() {
+  modalClose.addEventListener('click', () => {
+    productModal.classList.remove('show');
+  });
+  
+  // Close modal when clicking outside
+  productModal.addEventListener('click', (e) => {
+    if (e.target === productModal) {
+      productModal.classList.remove('show');
+    }
+  });
+}
+
+function showProductModal(product) {
+  modalBody.innerHTML = `
+    <div class="product-modal-content">
+      <div class="product-modal-image">
+        <img src="${product.image}" alt="${product.name}">
+      </div>
+      <div class="product-modal-details">
+        <h2>${product.name}</h2>
+        <p class="product-modal-tagline">${product.tagline}</p>
+        <div class="product-modal-notes">
+          <h3>${currentLanguage === 'ar' ? 'الرائحة' : 'Fragrance Notes'}</h3>
+          <p><strong>${currentLanguage === 'ar' ? 'البداية:' : 'Top:'}</strong> ${product.topNotes}</p>
+          <p><strong>${currentLanguage === 'ar' ? 'القلب:' : 'Heart:'}</strong> ${product.heartNotes}</p>
+          <p><strong>${currentLanguage === 'ar' ? 'القاعدة:' : 'Base:'}</strong> ${product.baseNotes}</p>
+        </div>
+        <p class="product-modal-description">${product.description}</p>
+        <div class="product-modal-price">$$299.00</div>
+        <div class="product-modal-actions">
+          <button class="btn btn--primary" onclick="addToCart(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+            ${currentLanguage === 'ar' ? 'إضافة إلى السلة' : 'Add to Cart'}
+          </button>
+          <button class="btn btn--secondary" onclick="productModal.classList.remove('show')">
+            ${currentLanguage === 'ar' ? 'إغلاق' : 'Close'}
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  productModal.classList.add('show');
+}
+
+/* ===== NOTIFICATIONS ===== */
+function showNotification(message, type = 'info') {
+  const notification = document.createElement('div');
+  notification.className = `notification notification--${type}`;
+  notification.textContent = message;
+  
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.classList.add('show');
+  }, 100);
+  
+  setTimeout(() => {
+    notification.classList.remove('show');
+    setTimeout(() => {
+      document.body.removeChild(notification);
+    }, 300);
+  }, 3000);
+}
+
+/* ===== CONTACT FORM ===== */
+function initContactForm() {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData);
+    
+    // Here you would send the form data to your backend
+    console.log('Contact form submitted:', data);
+    
+    const message = currentLanguage === 'ar' ? 'تم إرسال رسالتك بنجاح' : 'Your message has been sent successfully';
+    showNotification(message, 'success');
+    
+    contactForm.reset();
+  });
+}
+
 /* ===== INITIALIZATION ===== */
 document.addEventListener('DOMContentLoaded', () => {
   console.log('🌟 NARVA Website Loaded');
@@ -431,6 +688,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initScrollAnimations();
   initLazyLoading();
+  initLanguageSwitching();
+  initShoppingCart();
+  initProductModal();
+  initContactForm();
   loadProducts();
   
   // Add loading complete class
