@@ -1,108 +1,144 @@
-# NARVA - Luxury Fragrances Website
+# NARVA - The Door to Memory
 
-A modern, responsive website showcasing the premium NARVA perfume collection. Built with clean HTML, CSS, and JavaScript for optimal performance and user experience.
+A luxury perfume ecommerce website showcasing premium fragrances with an elegant, minimalist design and sophisticated user experience.
 
-## 🌟 Features
+## 🌟 Brand Identity
 
-- **Responsive Design**: Mobile-first approach that works beautifully on all devices
-- **Modern UI/UX**: Sophisticated design that reflects luxury perfume branding
-- **Product Showcase**: Complete collection of 12 NARVA fragrances with detailed descriptions
-- **Interactive Elements**: Smooth navigation, FAQ accordion, and mobile menu
-- **Performance Optimized**: Fast loading with compressed images and clean code
-- **Accessibility**: Semantic HTML and keyboard navigation support
-
-## 🚀 Live Demo
-
-Visit the live site: [GitHub Pages URL will be added after deployment]
-
-## 📱 Screenshots
-
-The website features:
-- Hero section with brand introduction
-- Featured fragrances showcase
-- Complete product collection grid
-- About us section with brand story
-- FAQ section with common questions
-- Responsive mobile navigation
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup and modern structure
-- **CSS3**: Advanced styling with Flexbox, Grid, and animations
-- **Vanilla JavaScript**: Interactive features and smooth user experience
-- **Google Fonts**: Typography using Playfair Display and Inter
-- **Responsive Design**: Mobile-first CSS media queries
-
-## 📂 Project Structure
-
-```
-narva-site/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles and responsive design
-├── script.js           # JavaScript functionality
-├── README.md           # Project documentation
-├── assets/
-│   ├── NARVA-LOGO.jpg  # Brand logo
-│   └── compress-images/ # Product photography
-└── .cursor/            # Development documentation
-    └── rules/
-        └── memory_bank/ # Project specifications
-```
-
-## 🎨 Design System
+**Brand Name:** NARVA Fragrance  
+**Tagline:** *The Door to Memory*  
+**Style:** Minimalist, elegant, premium  
+**Design Tone:** Neutral tones, soft shadows, rounded corners, delicate animations
 
 ### Color Palette
-- **Primary**: #2C2C2C (Deep Charcoal)
-- **Secondary**: #D4AF37 (Luxury Gold)
-- **Accent**: #000000 (Rich Black)
-- **Background**: #FFFFFF (Pure White)
-- **Light**: #F5F5F5 (Soft Grey)
+- **Primary:** #2C2C2C (Dark Grey)
+- **Secondary:** #D4AF37 (Gold)
+- **Accent:** #000000 (Black)
+- **White:** #FFFFFF
+- **Light Grey:** #F5F5F5
 
 ### Typography
-- **Headings**: Playfair Display (Elegant serif)
-- **Body Text**: Inter (Modern sans-serif)
+- **Headings:** Playfair Display (Serif)
+- **Body:** Inter (Sans-serif)
 
-## 🌍 Browser Support
+## ✨ Features
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+### 🏠 Enhanced Homepage
+- Hero section with brand tagline and lifestyle imagery
+- Trust elements (Authenticity Guarantee, Free Returns, Free Sample, Free Shipping)
+- Mood-based discovery section
+- Featured products with badges (New, Bestseller)
 
-## 📋 Product Collection
+### 🔍 Discovery Experience
+- **Shop by Mood:** Fresh, Bold, Romantic, Oriental
+- **Interactive Quiz:** "Find Your Perfect Scent" with personalized recommendations
+- **Smart Filters:** By accord, occasion, longevity
+- **Discovery Set:** Travel-size sampler collection
 
-The website showcases 11 unique NARVA fragrances:
+### 🛍️ Product Experience
+- **Fragrance Pyramid:** Visual representation of top, heart, and base notes
+- **Detailed Information:** Longevity, sillage, gender, size
+- **Mood Tags:** Perfect for specific occasions and personalities
+- **Trust Elements:** Free sample, return policy
+- **Enhanced Product Cards:** With mood tags and badges
 
-1. **NARVA Leather** - Bold. Smooth. Unforgettable.
-2. **NARVA Ouda** - Opulent. Exotic. Captivating.
-3. **Yano** - Fresh. Playful. Uplifting.
-4. **NARVA Miro** - Bright. Sweet. Comforting.
-5. **NARVA Layla** - Elegant. Feminine. Radiant.
-6. **NARVA Mano** - Warm. Spicy. Distinctive.
-7. **Jona** - Floral. Bright. Joyful.
-8. **Omaro** - Fresh. Masculine. Confident.
-9. **NARVA Lodi** - Unique. Cool. Leathered.
-10. **Gravition** - Energetic. Crisp. Inviting.
-11. **NARVA Ziza** - Sweet. Floral. Charming.
+### 📱 Responsive Design
+- Mobile-first approach
+- Tablet and desktop optimized
+- Smooth animations and transitions
+- Touch-friendly interactions
 
-## 🚀 Deployment
+### 🌍 Internationalization
+- English and Arabic language support
+- RTL layout support
+- Culturally appropriate content
 
-This site is designed for easy deployment on GitHub Pages:
+## 🎨 Design Elements
 
-1. Push code to GitHub repository
-2. Enable GitHub Pages in repository settings
-3. Select source branch (main/master)
-4. Site will be available at `username.github.io/repository-name`
+### Luxury Aesthetics
+- Clean, minimalist interface
+- Premium typography
+- Subtle shadows and animations
+- High-quality product imagery
+- Elegant color scheme
 
-## 📧 Contact
+### User Experience
+- Intuitive navigation
+- Smooth scrolling
+- Interactive elements
+- Loading animations
+- Accessibility features
 
-For questions about NARVA fragrances or this website, please contact [contact information to be added].
+## 🚀 Technical Implementation
+
+### Frontend Stack
+- **HTML5:** Semantic markup
+- **CSS3:** Custom properties, Grid, Flexbox
+- **JavaScript:** Vanilla JS with modern ES6+ features
+
+### Performance Features
+- Optimized images
+- Lazy loading
+- Smooth animations
+- Fast loading times
+- SEO optimized
+
+### Browser Support
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers
+- Progressive enhancement
+
+## 📦 Product Collection
+
+### Featured Fragrances
+- **NARVA Ouda** (New) - Opulent oriental oud
+- **NARVA Leather** (Bestseller) - Bold leather sophistication
+- **Yano** - Fresh citrus playfulness
+
+### Complete Collection
+- NARVA Miro - Bright fruity comfort
+- NARVA Layla - Elegant white floral
+- NARVA Mano - Warm tobacco spice
+- Jona - Floral citrus harmony
+- Omaro - Fresh masculine confidence
+- NARVA Lodi - Unique cool leather
+- Gravition - Energetic crisp freshness
+- NARVA Ziza - Sweet floral charm
+
+## 🎯 Target Audience
+
+- Luxury fragrance enthusiasts
+- Sophisticated consumers
+- Age: 25-45
+- Appreciate quality and craftsmanship
+- Value unique scent experiences
+
+## 🌟 Key Differentiators
+
+1. **Mood-Based Discovery:** Intuitive fragrance selection
+2. **Interactive Quiz:** Personalized recommendations
+3. **Fragrance Pyramid:** Educational scent breakdown
+4. **Trust Elements:** Confidence-building features
+5. **Luxury Experience:** Premium design and presentation
+
+## 📱 Mobile Experience
+
+- Touch-optimized interface
+- Swipe gestures
+- Mobile-friendly navigation
+- Optimized product images
+- Fast loading on mobile networks
+
+## 🔧 Setup & Deployment
+
+1. Clone the repository
+2. Open `index.html` in a web browser
+3. For production deployment, upload all files to your web server
 
 ## 📄 License
 
-This project showcases NARVA brand products. All rights reserved.
+This project is proprietary and confidential.
 
 ---
 
-**Built with ❤️ for luxury fragrance enthusiasts**
+**NARVA - The Door to Memory**  
+*Crafting unforgettable scent experiences*

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NARVA - Luxury Fragrances. Discover our collection of premium perfumes crafted with the finest ingredients.">
-    <meta name="keywords" content="narva, perfume, luxury fragrance, oud, leather, floral scents">
-    <title>NARVA - Luxury Fragrances</title>
+    <meta name="description" content="NARVA - The Door to Memory. Discover our luxury fragrance collection crafted with the finest ingredients for unforgettable scent experiences.">
+    <meta name="keywords" content="narva, luxury perfume, fragrance, oud, leather, floral scents, the door to memory">
+    <title>NARVA - The Door to Memory | Luxury Fragrances</title>
     
     <!-- Language support -->
     <meta name="language" content="en">
@@ -36,6 +36,9 @@
                 <ul class="nav__menu" id="nav-menu">
                     <li class="nav__item">
                         <a href="#home" class="nav__link active-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#discovery" class="nav__link" data-en="Discover" data-ar="اكتشف">Discover</a>
                     </li>
                     <li class="nav__item">
                         <a href="#collection" class="nav__link" data-en="Collection" data-ar="المجموعة">Collection</a>
@@ -77,19 +80,98 @@
             <div class="hero__container container">
                 <div class="hero__content">
                     <h1 class="hero__title">
-                        Discover the Art of
-                        <span class="hero__title-accent">Luxury Fragrance</span>
+                        The Door to
+                        <span class="hero__title-accent">Memory</span>
                     </h1>
                     <p class="hero__description">
                         NARVA presents an exquisite collection of premium perfumes, 
                         each crafted with the finest ingredients to create unforgettable scent experiences.
                     </p>
-                    <a href="#collection" class="hero__cta btn btn--primary">
-                        Explore Collection
-                    </a>
+                    <div class="hero__cta-group">
+                        <a href="#discovery" class="hero__cta btn btn--primary">
+                            Find Your Scent
+                        </a>
+                        <a href="#collection" class="hero__cta btn btn--secondary">
+                            Explore Collection
+                        </a>
+                    </div>
                 </div>
                 <div class="hero__image">
                     <img src="./assets/compress-images/1Z1A4953.jpg" alt="NARVA Luxury Perfume" class="hero__img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Elements -->
+        <section class="trust-elements">
+            <div class="container">
+                <div class="trust__grid">
+                    <div class="trust__item">
+                        <div class="trust__icon">✨</div>
+                        <h3 class="trust__title">Authenticity Guarantee</h3>
+                        <p class="trust__text">100% genuine fragrances</p>
+                    </div>
+                    <div class="trust__item">
+                        <div class="trust__icon">🔄</div>
+                        <h3 class="trust__title">Free Returns</h3>
+                        <p class="trust__text">30-day return policy</p>
+                    </div>
+                    <div class="trust__item">
+                        <div class="trust__icon">🎁</div>
+                        <h3 class="trust__title">Free Sample</h3>
+                        <p class="trust__text">With every purchase</p>
+                    </div>
+                    <div class="trust__item">
+                        <div class="trust__icon">🚚</div>
+                        <h3 class="trust__title">Free Shipping</h3>
+                        <p class="trust__text">On orders over $100</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mood Discovery Section -->
+        <section class="mood-discovery" id="discovery">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Shop by Mood</h2>
+                    <p class="section__subtitle">Discover fragrances that match your personality and occasion</p>
+                </div>
+                
+                <div class="mood__grid">
+                    <div class="mood__card" data-mood="fresh">
+                        <div class="mood__icon">🍊</div>
+                        <h3 class="mood__title">Fresh</h3>
+                        <p class="mood__description">Bright, uplifting citrus and green notes</p>
+                        <a href="#collection" class="mood__link">Explore Fresh Scents</a>
+                    </div>
+                    
+                    <div class="mood__card" data-mood="bold">
+                        <div class="mood__icon">🖤</div>
+                        <h3 class="mood__title">Bold</h3>
+                        <p class="mood__description">Confident, powerful leather and spice</p>
+                        <a href="#collection" class="mood__link">Explore Bold Scents</a>
+                    </div>
+                    
+                    <div class="mood__card" data-mood="romantic">
+                        <div class="mood__icon">🌹</div>
+                        <h3 class="mood__title">Romantic</h3>
+                        <p class="mood__description">Soft, elegant florals and vanilla</p>
+                        <a href="#collection" class="mood__link">Explore Romantic Scents</a>
+                    </div>
+                    
+                    <div class="mood__card" data-mood="oriental">
+                        <div class="mood__icon">🌌</div>
+                        <h3 class="mood__title">Oriental</h3>
+                        <p class="mood__description">Exotic, luxurious oud and amber</p>
+                        <a href="#collection" class="mood__link">Explore Oriental Scents</a>
+                    </div>
+                </div>
+                
+                <div class="discovery__cta">
+                    <a href="#quiz" class="btn btn--primary btn--large">
+                        Find Your Perfect Scent
+                    </a>
                 </div>
             </div>
         </section>
@@ -99,22 +181,12 @@
             <div class="container">
                 <div class="section__header">
                     <h2 class="section__title">Featured Fragrances</h2>
-                    <p class="section__subtitle">Discover our most popular scents</p>
+                    <p class="section__subtitle">Our most beloved scents</p>
                 </div>
                 
                 <div class="featured__grid">
-                    <div class="featured__card">
-                        <div class="featured__image">
-                            <img src="./assets/compress-images/narva-leather-1.jpg" alt="NARVA Leather" class="featured__img">
-                        </div>
-                        <div class="featured__content">
-                            <h3 class="featured__name">NARVA Leather</h3>
-                            <p class="featured__tagline">Bold. Smooth. Unforgettable.</p>
-                            <p class="featured__notes">Raspberry • Saffron • Leather • Vanilla</p>
-                        </div>
-                    </div>
-                    
-                    <div class="featured__card">
+                    <div class="featured__card featured__card--new">
+                        <div class="featured__badge">New</div>
                         <div class="featured__image">
                             <img src="./assets/compress-images/narva-ouda-1.jpg" alt="NARVA Ouda" class="featured__img">
                         </div>
@@ -122,6 +194,26 @@
                             <h3 class="featured__name">NARVA Ouda</h3>
                             <p class="featured__tagline">Opulent. Exotic. Captivating.</p>
                             <p class="featured__notes">Passion Fruit • Oud • Amber • Vanilla</p>
+                            <div class="featured__mood-tags">
+                                <span class="mood-tag">Luxurious</span>
+                                <span class="mood-tag">Oriental</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="featured__card featured__card--bestseller">
+                        <div class="featured__badge">Bestseller</div>
+                        <div class="featured__image">
+                            <img src="./assets/compress-images/narva-leather-1.jpg" alt="NARVA Leather" class="featured__img">
+                        </div>
+                        <div class="featured__content">
+                            <h3 class="featured__name">NARVA Leather</h3>
+                            <p class="featured__tagline">Bold. Smooth. Unforgettable.</p>
+                            <p class="featured__notes">Raspberry • Saffron • Leather • Vanilla</p>
+                            <div class="featured__mood-tags">
+                                <span class="mood-tag">Bold</span>
+                                <span class="mood-tag">Confident</span>
+                            </div>
                         </div>
                     </div>
                     
@@ -133,18 +225,57 @@
                             <h3 class="featured__name">Yano</h3>
                             <p class="featured__tagline">Fresh. Playful. Uplifting.</p>
                             <p class="featured__notes">Yuzu • Orange Blossom • Sandalwood</p>
+                            <div class="featured__mood-tags">
+                                <span class="mood-tag">Fresh</span>
+                                <span class="mood-tag">Playful</span>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="featured__discovery">
+                    <div class="discovery__box">
+                        <h3 class="discovery__title">Discovery Set</h3>
+                        <p class="discovery__description">Try our most popular fragrances in travel-size bottles</p>
+                        <a href="#discovery-set" class="btn btn--secondary">Shop Discovery Set</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Full Collection -->
+        <!-- Full Collection with Filters -->
         <section class="collection" id="collection">
             <div class="container">
                 <div class="section__header">
                     <h2 class="section__title">Complete Collection</h2>
                     <p class="section__subtitle">Explore all NARVA fragrances</p>
+                </div>
+                
+                <!-- Filters -->
+                <div class="collection__filters">
+                    <div class="filter__group">
+                        <label class="filter__label">Filter by Accord:</label>
+                        <div class="filter__options">
+                            <button class="filter__option active" data-filter="all">All</button>
+                            <button class="filter__option" data-filter="fruity">Fruity</button>
+                            <button class="filter__option" data-filter="leather">Leather</button>
+                            <button class="filter__option" data-filter="oud">Oud</button>
+                            <button class="filter__option" data-filter="tobacco">Tobacco</button>
+                            <button class="filter__option" data-filter="citrus">Citrus</button>
+                            <button class="filter__option" data-filter="floral">Floral</button>
+                        </div>
+                    </div>
+                    
+                    <div class="filter__group">
+                        <label class="filter__label">Filter by Occasion:</label>
+                        <div class="filter__options">
+                            <button class="filter__option active" data-filter="all">All</button>
+                            <button class="filter__option" data-filter="everyday">Everyday</button>
+                            <button class="filter__option" data-filter="evening">Evening</button>
+                            <button class="filter__option" data-filter="special">Special Events</button>
+                            <button class="filter__option" data-filter="romantic">Romantic</button>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="collection__grid" id="collection-grid">
@@ -382,6 +513,25 @@
             <button class="modal-close" id="modal-close">×</button>
             <div class="modal-body" id="modal-body">
                 <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scent Quiz Modal -->
+    <div class="modal" id="quiz-modal">
+        <div class="modal-content modal-content--large">
+            <button class="modal-close" id="quiz-close">×</button>
+            <div class="quiz-container" id="quiz-container">
+                <div class="quiz-header">
+                    <h2 class="quiz-title">Find Your Perfect Scent</h2>
+                    <p class="quiz-subtitle">Answer a few questions to discover your ideal fragrance</p>
+                </div>
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+                </div>
+                <div class="quiz-content" id="quiz-content">
+                    <!-- Quiz questions will be loaded here -->
+                </div>
             </div>
         </div>
     </div>

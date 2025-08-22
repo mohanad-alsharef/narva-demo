@@ -4,12 +4,210 @@ globs:
 alwaysApply: true
 ---
 want to make a site for my products
-this will be home page faq and abount us
-will later include links to extrnal source
+want to make a low fedality high quality UI prototype to include the design I want for my ecomerce site
+want it responseve mobile adn tablet friendly
+modern targeting clients
+take advantage of what trendy for perfumes ecomerce websites that attract clients
+avoid having the clients comments
+theme make it tward grey white and black
+I want you to make the project only use simple html js css
+remove any other files
+this image 1Z1A.. is our product main image
+narva-logo is our logo
+narava txt is products discription
+and pdf is the pdoructs images with other disciptive images
+Use the colors from the image logo and 1z1a to define the prouct identity
+include those finding in md read me files including fonts and all identity related
+
 
 want to link and publish this on github
 
 assist me in adding it to github and publish it
 
 
+# Perfume Ecommerce Website – Project Description
+
+## 🔹 Starting Prompt (for Cursor)
+You are an expert full-stack developer and UX designer.  
+Your task is to build a **luxury perfume ecommerce website** for the brand **Narva Fragrance**.  
+The website must:  
+- Reflect **luxury and elegance**.  
+- Use a **minimalist, modern UI** with smooth animations.  
+- Be **mobile-first** and optimized for fast loading.  
+- Implement the **UX journey flow** described below.  
+- Include the **product info and content** provided.  
+- Use **clean, modular code** (React + Tailwind recommended).  
+- Ensure best practices for accessibility, SEO, and performance.  
+
+---
+
+## 🔹 Brand Identity
+**Brand Name:** Narva Fragrance  
+**Tagline:** *The Door to Memory*  
+**Style:** Minimalist, elegant, premium.  
+**Design Tone:** Neutral tones, soft shadows, rounded corners, delicate animations.  
+
+---
+
+## 🔹 UX Journey Flow
+
+### 1. Homepage
+- Hero section with **tagline and lifestyle image**.  
+- Quick discovery buttons:  
+  - Shop by Mood (Fresh, Bold, Romantic, Oriental).  
+  - Shop Discovery Set.  
+- Featured products (New: Narva Ouda, Bestselling: Narva Leather).  
+- Trust elements (Authenticity Guarantee, Free Returns, Free Sample).  
+
+### 2. Discovery Section
+- Filters by Accord, Occasion, Longevity.  
+- AI/Quiz-style recommender: “Find Your Scent”.  
+- Showcase mood-based groupings.  
+
+### 3. Product Page (Example: Narva Leather)
+- Large bottle visuals + lifestyle images.  
+- Tagline and emotional description.  
+- **Fragrance Pyramid** (Top, Middle, Base Notes).  
+- Accord & Mood tags.  
+- Customer reviews with longevity/sillage ratings.  
+- Cross-sell (suggest related perfumes or Discovery Set).  
+- Clear **Add to Cart** CTA + Free Sample badge.  
+
+### 4. Cart & Checkout
+- Minimal step checkout.  
+- Trust signals (secure payment, easy returns).  
+- Offer upsell bundles.  
+
+### 5. Post-Purchase
+- Elegant confirmation email/page.  
+- Follow-up emails: perfume tips, layering advice.  
+- Loyalty & referral prompts.  
+
+### 6. Retention
+- Personalized suggestions.  
+- Seasonal launches.  
+- Exclusive member/VIP drops.  
+
+---
+
+## 🔹 Product Cards
+
+### Narva Miro  
+**Accord:** Fruity 🍊  
+**Tagline:** *A bright, joyful burst of citrus fruits that settles into a warm vanilla embrace.*  
+**Notes:**  
+- Top: Sicilian Orange, Calabrian Bergamot, Sicilian Lemon  
+- Middle: Fruits  
+- Base: White Musk, Madagascar Vanilla, Amber  
+**Mood Tags:** Fresh • Energetic • Playful • Everyday  
+
+---
+
+### Narva Leather  
+**Accord:** Leather 🖤  
+**Tagline:** *Bold and sophisticated — a leathery embrace with a soft vanilla touch.*  
+**Notes:**  
+- Top: Raspberry, Saffron, Pink Pepper  
+- Middle: Leather, Iris, Cedar  
+- Base: Vanilla, Musk  
+**Mood Tags:** Bold • Confident • Night Out • Spicy  
+
+---
+
+### Narva Ouda  
+**Accord:** Oud 🌌  
+**Tagline:** *A rich oriental oud with passionfruit sweetness and deep smoky woods.*  
+**Notes:**  
+- Top: Passionfruit, Fruity Notes, Saffron, Turkish Rose  
+- Middle: Agarwood (Oud), Indonesian Patchouli Leaf, Benzoin  
+- Base: Leather, Akigalawood, Amber, Vanilla, Labdanum  
+**Mood Tags:** Luxurious • Intense • Oriental • Signature Scent  
+
+---
+
+### Narva Mano  
+**Accord:** Tobacco 🌿  
+**Tagline:** *Warm and smoky, with spiced rum and sweet vanilla tobacco leaf.*  
+**Notes:**  
+- Top: Pink Pepper, Neroli, Lemon  
+- Middle: Rum, Java Vetiver Oil, Clary Sage  
+- Base: Tobacco Leaf, Vanilla Bean, Styrax  
+**Mood Tags:** Masculine • Smoky • Warm • Evening  
+
+---
+
+### Narva Lody  
+**Accord:** TBD  
+**Tagline:** *Mysterious and refined — crafted for those who seek uniqueness.*  
+**Notes:** (to be defined)  
+**Mood Tags:** Signature • Elegant • Modern  
+
+---
+
+### Yanu  
+**Accord:** Citrus 🌞  
+**Tagline:** *Zesty and uplifting, a citrus bouquet with soft floral warmth.*  
+**Notes:**  
+- Top: Orange Blossom, Yuzu, Lemon, Pear  
+- Middle: Heliotrope, Passion Flower  
+- Base: Musk, Sandalwood, Amber, Cedar  
+**Mood Tags:** Fresh • Clean • Daytime • Casual  
+
+---
+
+### Juna  
+**Accord:** Citrus & Floral 🌺  
+**Tagline:** *A floral citrus harmony with a sensual jasmine and rose heart.*  
+**Notes:**  
+- Top: Orange, Mandarin Orange, Bergamot, Orange Blossom  
+- Middle: Turkish Rose, Jasmine, Mimosa, Ylang  
+- Base: Patchouli, White Musk, Vanilla, Vetiver, Tonka Bean, Opoponax  
+**Mood Tags:** Romantic • Feminine • Elegant • Versatile  
+
+---
+
+### Umaro  
+**Accord:** Fruity 🍏  
+**Tagline:** *Crisp fruits meet smoky woods for a dynamic and powerful fragrance.*  
+**Notes:**  
+- Top: Bergamot, Black Currant, Apple, Lemon, Pink Pepper  
+- Middle: Pineapple, Patchouli, Moroccan Jasmine  
+- Base: Birch, Musk, Oak Moss, Ambroxan, Cedarwood  
+**Mood Tags:** Fresh • Masculine • Dynamic • All Seasons  
+
+---
+
+### Narvaziza  
+**Accord:** TBD  
+**Tagline:** *A refined composition — crafted to leave a lasting impression.*  
+**Notes:** (to be defined)  
+**Mood Tags:** Timeless • Elegant • Mysterious  
+
+---
+
+### Narva Laila  
+**Accord:** White Floral 🌼  
+**Tagline:** *A luminous white floral blend with soft vanilla and cedarwood depth.*  
+**Notes:**  
+- Top: Orange Blossom, Bergamot  
+- Middle: Tuberose, Indian Jasmine  
+- Base: Madagascar Vanilla, White Musk, Virginian Cedar  
+**Mood Tags:** Feminine • Romantic • Soft • Classic  
+
+---
+
+## 🔹 Technical Notes
+- Tech Stack: React + Next.js + TailwindCSS (suggested).  
+- Deploy: Vercel or Netlify.  
+- Use structured data (SEO: Product Schema).  
+- Modular components: Product Card, Product Grid, Filters, Fragrance Pyramid.  
+- Consider animation library: Framer Motion.  
+
+---
+
+## ✅ Deliverables
+- Fully responsive perfume ecommerce website.  
+- Homepage, Discovery, Product Detail, Cart/Checkout pages.  
+- Product data integrated as JSON or CMS source.  
+- SEO-optimized and performance tested.  
 

@@ -1,9 +1,18 @@
-# IDE and Editor files
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
 
 # OS generated files
 .DS_Store
@@ -14,32 +23,6 @@
 ehthumbs.db
 Thumbs.db
 
-# Logs and databases
-*.log
-*.sql
-*.sqlite
-
-# Runtime files
-*.pid
-*.lock
-
-# Dependency directories
-node_modules/
-bower_components/
-
-# Build directories
-dist/
-build/
-
-# Environment variables
-.env
-.env.local
-.env.production
-
-# Cache directories
-.cache/
-.parcel-cache/
-
-# Temporary files
-.tmp/
-temp/
+# Backup files
+*.bak
+*.backup

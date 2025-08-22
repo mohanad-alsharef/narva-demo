@@ -3,7 +3,7 @@
 // Language support
 let currentLanguage = 'en';
 
-// Product data from the CSV file
+// Enhanced product data with mood and accord information
 const products = [
   {
     id: 'narva-leather',
@@ -17,6 +17,12 @@ const products = [
     baseNotes: 'Vanilla, Musk',
     size: '100ml – Eau de Parfum',
     gender: 'Unisex',
+    accord: 'leather',
+    mood: ['bold', 'confident', 'evening'],
+    occasions: ['evening', 'special'],
+    longevity: 'long-lasting',
+    sillage: 'strong',
+    price: 150,
     image: './assets/compress-images/narva-leather-1.jpg'
   },
   {
@@ -31,6 +37,12 @@ const products = [
     baseNotes: 'Leather, Akigalawood, Amber, Vanilla, Labdanum',
     size: '100ml – Eau de Parfum',
     gender: 'Unisex',
+    accord: 'oud',
+    mood: ['luxurious', 'oriental', 'intense'],
+    occasions: ['special', 'evening'],
+    longevity: 'very long-lasting',
+    sillage: 'heavy',
+    price: 180,
     image: './assets/compress-images/narva-ouda-1.jpg'
   },
   {
@@ -45,6 +57,12 @@ const products = [
     baseNotes: 'Musk, Sandalwood, Amber, Cedarwood',
     size: '100ml – Eau de Parfum',
     gender: 'Unisex',
+    accord: 'citrus',
+    mood: ['fresh', 'playful', 'everyday'],
+    occasions: ['everyday', 'daytime'],
+    longevity: 'moderate',
+    sillage: 'fresh',
+    price: 120,
     image: './assets/compress-images/yanu-1.jpg'
   },
   {
@@ -616,14 +634,74 @@ function showProductModal(product) {
       <div class="product-modal-details">
         <h2>${product.name}</h2>
         <p class="product-modal-tagline">${product.tagline}</p>
-        <div class="product-modal-notes">
-          <h3>${currentLanguage === 'ar' ? 'الرائحة' : 'Fragrance Notes'}</h3>
-          <p><strong>${currentLanguage === 'ar' ? 'البداية:' : 'Top:'}</strong> ${product.topNotes}</p>
-          <p><strong>${currentLanguage === 'ar' ? 'القلب:' : 'Heart:'}</strong> ${product.heartNotes}</p>
-          <p><strong>${currentLanguage === 'ar' ? 'القاعدة:' : 'Base:'}</strong> ${product.baseNotes}</p>
-        </div>
         <p class="product-modal-description">${product.description}</p>
-        <div class="product-modal-price">$$299.00</div>
+        
+        <!-- Fragrance Pyramid -->
+        <div class="fragrance-pyramid">
+          <h3>${currentLanguage === 'ar' ? 'هرم العطر' : 'Fragrance Pyramid'}</h3>
+          <div class="pyramid-layers">
+            <div class="pyramid-layer top-notes">
+              <h4>${currentLanguage === 'ar' ? 'البداية' : 'Top Notes'}</h4>
+              <p>${product.topNotes}</p>
+              <div class="pyramid-icon">🌸</div>
+            </div>
+            <div class="pyramid-layer heart-notes">
+              <h4>${currentLanguage === 'ar' ? 'القلب' : 'Heart Notes'}</h4>
+              <p>${product.heartNotes}</p>
+              <div class="pyramid-icon">🌹</div>
+            </div>
+            <div class="pyramid-layer base-notes">
+              <h4>${currentLanguage === 'ar' ? 'القاعدة' : 'Base Notes'}</h4>
+              <p>${product.baseNotes}</p>
+              <div class="pyramid-icon">🌳</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product Details -->
+        <div class="product-details">
+          <div class="detail-item">
+            <span class="detail-label">${currentLanguage === 'ar' ? 'الحجم:' : 'Size:'}</span>
+            <span class="detail-value">${product.size}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">${currentLanguage === 'ar' ? 'الجنس:' : 'Gender:'}</span>
+            <span class="detail-value">${product.gender}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">${currentLanguage === 'ar' ? 'الاستمرارية:' : 'Longevity:'}</span>
+            <span class="detail-value">${product.longevity || 'Moderate'}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">${currentLanguage === 'ar' ? 'الانتشار:' : 'Sillage:'}</span>
+            <span class="detail-value">${product.sillage || 'Moderate'}</span>
+          </div>
+        </div>
+        
+        <!-- Mood Tags -->
+        ${product.mood ? `
+        <div class="product-mood-tags">
+          <h4>${currentLanguage === 'ar' ? 'مثالي لـ:' : 'Perfect For:'}</h4>
+          <div class="mood-tags">
+            ${product.mood.map(mood => `<span class="mood-tag">${mood}</span>`).join('')}
+          </div>
+        </div>
+        ` : ''}
+        
+        <div class="product-modal-price">$${product.price || 150}</div>
+        
+        <!-- Trust Elements -->
+        <div class="product-trust-elements">
+          <div class="trust-item">
+            <span class="trust-icon">🎁</span>
+            <span class="trust-text">${currentLanguage === 'ar' ? 'عينة مجانية' : 'Free Sample'}</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🔄</span>
+            <span class="trust-text">${currentLanguage === 'ar' ? 'إرجاع مجاني' : '30-Day Returns'}</span>
+          </div>
+        </div>
+        
         <div class="product-modal-actions">
           <button class="btn btn--primary" onclick="addToCart(${JSON.stringify(product).replace(/"/g, '&quot;')})">
             ${currentLanguage === 'ar' ? 'إضافة إلى السلة' : 'Add to Cart'}
@@ -677,6 +755,40 @@ function initContactForm() {
   });
 }
 
+// Quiz data
+const quizQuestions = [
+  {
+    question: "What's your preferred scent family?",
+    options: [
+      { text: "Fresh & Citrus", icon: "🍊", value: "fresh" },
+      { text: "Bold & Spicy", icon: "🖤", value: "bold" },
+      { text: "Romantic & Floral", icon: "🌹", value: "romantic" },
+      { text: "Exotic & Oriental", icon: "🌌", value: "oriental" }
+    ]
+  },
+  {
+    question: "When do you usually wear perfume?",
+    options: [
+      { text: "Everyday", icon: "☀️", value: "everyday" },
+      { text: "Evening Out", icon: "🌙", value: "evening" },
+      { text: "Special Events", icon: "✨", value: "special" },
+      { text: "Romantic Dates", icon: "💕", value: "romantic" }
+    ]
+  },
+  {
+    question: "How long do you want your fragrance to last?",
+    options: [
+      { text: "Light & Fresh", icon: "🌱", value: "moderate" },
+      { text: "Moderate", icon: "🌿", value: "long-lasting" },
+      { text: "Long-lasting", icon: "🌳", value: "very long-lasting" },
+      { text: "Intense", icon: "🔥", value: "intense" }
+    ]
+  }
+];
+
+let currentQuizStep = 0;
+let quizAnswers = [];
+
 /* ===== INITIALIZATION ===== */
 document.addEventListener('DOMContentLoaded', () => {
   console.log('🌟 NARVA Website Loaded');
@@ -693,6 +805,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductModal();
   initContactForm();
   loadProducts();
+  initQuiz();
+  initFilters();
+  initMoodDiscovery();
   
   // Add loading complete class
   document.body.classList.add('loaded');
@@ -717,6 +832,247 @@ faqItems.forEach(item => {
     }
   });
 });
+
+/* ===== QUIZ FUNCTIONALITY ===== */
+function initQuiz() {
+  const quizModal = document.getElementById('quiz-modal');
+  const quizClose = document.getElementById('quiz-close');
+  const quizContent = document.getElementById('quiz-content');
+  const quizProgressBar = document.getElementById('quiz-progress-bar');
+  
+  // Quiz CTA button
+  const quizCTA = document.querySelector('.discovery__cta .btn');
+  if (quizCTA) {
+    quizCTA.addEventListener('click', (e) => {
+      e.preventDefault();
+      showQuiz();
+    });
+  }
+  
+  // Close quiz
+  if (quizClose) {
+    quizClose.addEventListener('click', () => {
+      quizModal.classList.remove('show');
+      resetQuiz();
+    });
+  }
+  
+  // Close on backdrop click
+  quizModal.addEventListener('click', (e) => {
+    if (e.target === quizModal) {
+      quizModal.classList.remove('show');
+      resetQuiz();
+    }
+  });
+}
+
+function showQuiz() {
+  const quizModal = document.getElementById('quiz-modal');
+  const quizContent = document.getElementById('quiz-content');
+  
+  currentQuizStep = 0;
+  quizAnswers = [];
+  quizModal.classList.add('show');
+  showQuizQuestion();
+}
+
+function showQuizQuestion() {
+  const quizContent = document.getElementById('quiz-content');
+  const quizProgressBar = document.getElementById('quiz-progress-bar');
+  const question = quizQuestions[currentQuizStep];
+  
+  // Update progress
+  const progress = ((currentQuizStep + 1) / quizQuestions.length) * 100;
+  quizProgressBar.style.setProperty('--progress', `${progress}%`);
+  
+  // Show question
+  quizContent.innerHTML = `
+    <div class="quiz-question">
+      <h3>${question.question}</h3>
+      <div class="quiz-options">
+        ${question.options.map((option, index) => `
+          <div class="quiz-option" data-value="${option.value}" onclick="selectQuizOption(${index})">
+            <div class="quiz-option-icon">${option.icon}</div>
+            <div class="quiz-option-text">${option.text}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function selectQuizOption(optionIndex) {
+  const question = quizQuestions[currentQuizStep];
+  const selectedValue = question.options[optionIndex].value;
+  
+  // Remove previous selections
+  document.querySelectorAll('.quiz-option').forEach(option => {
+    option.classList.remove('selected');
+  });
+  
+  // Select current option
+  document.querySelectorAll('.quiz-option')[optionIndex].classList.add('selected');
+  
+  // Store answer
+  quizAnswers[currentQuizStep] = selectedValue;
+  
+  // Move to next question or show results
+  setTimeout(() => {
+    currentQuizStep++;
+    if (currentQuizStep < quizQuestions.length) {
+      showQuizQuestion();
+    } else {
+      showQuizResults();
+    }
+  }, 500);
+}
+
+function showQuizResults() {
+  const quizContent = document.getElementById('quiz-content');
+  
+  // Simple recommendation logic
+  const recommendations = getRecommendations(quizAnswers);
+  
+  quizContent.innerHTML = `
+    <div class="quiz-result">
+      <h3>Your Perfect Scent Awaits</h3>
+      <p class="quiz-result-description">
+        Based on your preferences, we recommend these fragrances that match your style and personality.
+      </p>
+      <div class="quiz-recommendations">
+        ${recommendations.map(product => `
+          <div class="quiz-recommendation">
+            <img src="${product.image}" alt="${product.name}">
+            <h4>${product.name}</h4>
+            <p>${product.tagline}</p>
+            <button class="btn btn--primary btn--small" onclick="showProductModal('${product.id}')">
+              Learn More
+            </button>
+          </div>
+        `).join('')}
+      </div>
+      <div class="quiz-navigation">
+        <button class="btn btn--secondary" onclick="resetQuiz()">Take Quiz Again</button>
+        <button class="btn btn--primary" onclick="document.getElementById('quiz-modal').classList.remove('show')">
+          Explore All Fragrances
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function getRecommendations(answers) {
+  // Simple recommendation algorithm
+  const [scentFamily, occasion, longevity] = answers;
+  
+  return products.filter(product => {
+    return (
+      product.mood.includes(scentFamily) ||
+      product.occasions.includes(occasion) ||
+      product.longevity === longevity
+    );
+  }).slice(0, 3);
+}
+
+function resetQuiz() {
+  currentQuizStep = 0;
+  quizAnswers = [];
+  showQuizQuestion();
+}
+
+/* ===== FILTERS FUNCTIONALITY ===== */
+function initFilters() {
+  const filterOptions = document.querySelectorAll('.filter__option');
+  
+  filterOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const filterType = option.closest('.filter__group').querySelector('.filter__label').textContent;
+      const filterValue = option.dataset.filter;
+      
+      // Update active state
+      option.closest('.filter__options').querySelectorAll('.filter__option').forEach(opt => {
+        opt.classList.remove('active');
+      });
+      option.classList.add('active');
+      
+      // Apply filter
+      applyFilters();
+    });
+  });
+}
+
+function applyFilters() {
+  const activeFilters = {};
+  
+  document.querySelectorAll('.filter__option.active').forEach(option => {
+    const filterType = option.closest('.filter__group').querySelector('.filter__label').textContent;
+    const filterValue = option.dataset.filter;
+    
+    if (filterValue !== 'all') {
+      if (!activeFilters[filterType]) {
+        activeFilters[filterType] = [];
+      }
+      activeFilters[filterType].push(filterValue);
+    }
+  });
+  
+  const filteredProducts = products.filter(product => {
+    // Filter by accord
+    if (activeFilters['Filter by Accord:'] && activeFilters['Filter by Accord:'].length > 0) {
+      if (!activeFilters['Filter by Accord:'].includes(product.accord)) {
+        return false;
+      }
+    }
+    
+    // Filter by occasion
+    if (activeFilters['Filter by Occasion:'] && activeFilters['Filter by Occasion:'].length > 0) {
+      const hasMatchingOccasion = activeFilters['Filter by Occasion:'].some(occasion => 
+        product.occasions.includes(occasion)
+      );
+      if (!hasMatchingOccasion) {
+        return false;
+      }
+    }
+    
+    return true;
+  });
+  
+  renderProducts(filteredProducts);
+}
+
+/* ===== MOOD DISCOVERY ===== */
+function initMoodDiscovery() {
+  const moodCards = document.querySelectorAll('.mood__card');
+  
+  moodCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const mood = card.dataset.mood;
+      filterByMood(mood);
+    });
+  });
+}
+
+function filterByMood(mood) {
+  const filteredProducts = products.filter(product => 
+    product.mood.includes(mood)
+  );
+  
+  renderProducts(filteredProducts);
+  
+  // Scroll to collection
+  document.getElementById('collection').scrollIntoView({ behavior: 'smooth' });
+}
+
+function renderProducts(productsToRender) {
+  const collectionGrid = document.getElementById('collection-grid');
+  
+  if (collectionGrid) {
+    collectionGrid.innerHTML = productsToRender.map(product => createProductCard(product)).join('');
+    
+    // Reinitialize product modals for new cards
+    initProductModal();
+  }
+}
 
 /* ===== EXPORT FOR TESTING ===== */
 if (typeof module !== 'undefined' && module.exports) {
