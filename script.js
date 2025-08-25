@@ -77,6 +77,12 @@ const products = [
     baseNotes: 'White Musk, Amber, Madagascan Vanilla',
     size: '100ml – Eau de Parfum',
     gender: 'Unisex',
+    accord: 'fruity',
+    mood: ['fresh', 'sweet', 'casual'],
+    occasions: ['daily', 'spring'],
+    longevity: 'Moderate longevity, soft projection',
+    sillage: 'soft',
+    price: 130,
     image: './assets/compress-images/narva-miro-1.jpg'
   },
   {
@@ -91,6 +97,12 @@ const products = [
     baseNotes: 'Madagascan Vanilla, White Musk, Virginia Cedar',
     size: '100ml – Eau de Parfum',
     gender: 'For Her',
+    accord: 'floral',
+    mood: ['romantic', 'elegant', 'feminine'],
+    occasions: ['romantic', 'formal'],
+    longevity: 'Long-lasting, moderate projection',
+    sillage: 'moderate',
+    price: 160,
     image: './assets/compress-images/1Z1A4975.jpg'
   },
   {
@@ -105,6 +117,12 @@ const products = [
     baseNotes: 'Tobacco Leaves, Vanilla, Styrax',
     size: '100ml – Eau de Parfum',
     gender: 'Unisex',
+    accord: 'tobacco',
+    mood: ['warm', 'spicy', 'distinctive'],
+    occasions: ['evening', 'autumn'],
+    longevity: 'Long-lasting, warm projection',
+    sillage: 'warm',
+    price: 170,
     image: './assets/compress-images/narva-mano-1.jpg'
   },
   {
@@ -119,6 +137,12 @@ const products = [
     baseNotes: 'Patchouli, White Musk, Vanilla, Vetiver, Tonka Bean, Galbanum',
     size: '100ml – Eau de Parfum',
     gender: 'Unisex',
+    accord: 'floral',
+    mood: ['romantic', 'feminine', 'elegant'],
+    occasions: ['daytime', 'spring'],
+    longevity: 'Moderate longevity, moderate projection',
+    sillage: 'moderate',
+    price: 140,
     image: './assets/compress-images/juna-1.jpg'
   },
   {
@@ -133,6 +157,12 @@ const products = [
     baseNotes: 'Musk, Oakmoss, Ambergris, Vanilla',
     size: '100ml – Eau de Parfum',
     gender: 'For Him',
+    accord: 'fruity',
+    mood: ['fresh', 'masculine', 'dynamic'],
+    occasions: ['business', 'evening'],
+    longevity: 'Long-lasting, strong projection',
+    sillage: 'strong',
+    price: 150,
     image: './assets/compress-images/umaro-1.jpg'
   },
   {
@@ -147,6 +177,12 @@ const products = [
     baseNotes: 'Vanilla, Leather',
     size: '100ml – Eau de Parfum',
     gender: 'Unisex',
+    accord: 'leather',
+    mood: ['unique', 'cool', 'edgy'],
+    occasions: ['casual', 'creative'],
+    longevity: 'Moderate longevity, cool projection',
+    sillage: 'cool',
+    price: 155,
     image: './assets/compress-images/narva-lody-1.jpg'
   },
   {
@@ -161,6 +197,12 @@ const products = [
     baseNotes: 'Oakmoss, Woods',
     size: '100ml – Eau de Parfum',
     gender: 'Unisex',
+    accord: 'woody',
+    mood: ['energetic', 'crisp', 'inviting'],
+    occasions: ['outdoor', 'daytime'],
+    longevity: 'Moderate longevity, fresh projection',
+    sillage: 'fresh',
+    price: 135,
     image: './assets/compress-images/1Z1A4980.jpg'
   },
   {
@@ -175,6 +217,12 @@ const products = [
     baseNotes: 'Vanilla, Musk, Amberwood',
     size: '100ml – Eau de Parfum',
     gender: 'Unisex',
+    accord: 'fruity',
+    mood: ['sweet', 'floral', 'charming'],
+    occasions: ['casual', 'romantic'],
+    longevity: 'Moderate longevity, soft projection',
+    sillage: 'soft',
+    price: 125,
     image: './assets/compress-images/1Z1A4985.jpg'
   }
 ];
@@ -292,18 +340,19 @@ function initFAQ() {
 
 /* ===== PRODUCT GRID LOADING ===== */
 function loadProducts() {
-  if (!collectionGrid) return;
+  const grid = document.getElementById('collection-grid');
+  if (!grid) return;
   
   // Show loading state
-  collectionGrid.innerHTML = '<div class="loading">Loading products...</div>';
+  grid.innerHTML = '<div class="loading">Loading products...</div>';
   
   // Simulate loading delay for better UX
   setTimeout(() => {
-    collectionGrid.innerHTML = '';
+    grid.innerHTML = '';
     
     products.forEach((product, index) => {
       const productCard = createProductCard(product);
-      collectionGrid.appendChild(productCard);
+      grid.appendChild(productCard);
       
       // Stagger animations
       setTimeout(() => {
@@ -312,6 +361,25 @@ function loadProducts() {
       }, index * 100);
     });
   }, 500);
+}
+
+function getProductPageUrl(productId) {
+  // Map specific products to individual pages, fallback to general product page
+  const productPages = {
+    'narva-leather': 'narva-leather.html',
+    'narva-ouda': 'product.html?product=narva-ouda',
+    'narva-miro': 'product.html?product=narva-miro',
+    'narva-layla': 'product.html?product=narva-layla',
+    'narva-mano': 'product.html?product=narva-mano',
+    'narva-lodi': 'product.html?product=narva-lodi',
+    'yano': 'product.html?product=yano',
+    'jona': 'product.html?product=jona',
+    'omaro': 'product.html?product=omaro',
+    'gravition': 'product.html?product=gravition',
+    'narva-ziza': 'product.html?product=narva-ziza'
+  };
+  
+  return productPages[productId] || `product.html?product=${productId}`;
 }
 
 function createProductCard(product) {
@@ -334,12 +402,12 @@ function createProductCard(product) {
         <strong>${currentLanguage === 'ar' ? 'القاعدة:' : 'Base:'}</strong> ${product.baseNotes}
       </p>
       <p class="product__description">${product.description}</p>
-      <div class="product__price">$$299.00</div>
+      <div class="product__price">$${product.price}</div>
       <div class="product__actions">
         <button class="btn btn--primary btn--small" onclick="addToCart(${JSON.stringify(product).replace(/"/g, '&quot;')})">
           ${currentLanguage === 'ar' ? 'إضافة إلى السلة' : 'Add to Cart'}
         </button>
-        <button class="btn btn--secondary btn--small" onclick="showProductModal(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+        <button class="btn btn--secondary btn--small" onclick="window.location.href='${getProductPageUrl(product.id)}'">
           ${currentLanguage === 'ar' ? 'عرض التفاصيل' : 'View Details'}
         </button>
       </div>
@@ -819,6 +887,7 @@ function initPageSpecificFeatures() {
   // Handle URL parameters for filtering
   const urlParams = new URLSearchParams(window.location.search);
   const filter = urlParams.get('filter');
+  const productId = urlParams.get('product');
   
   if (filter) {
     // Apply filter on collection page
@@ -841,6 +910,14 @@ function initPageSpecificFeatures() {
       }
     });
   }
+  
+  // Initialize product detail page
+  if (productId && window.location.pathname.includes('product.html')) {
+    initProductDetailPage(productId);
+  }
+  
+  // Update product cards to link to product pages
+  updateProductCardsForDetailPages();
 }
 
 /* ===== ACCESSIBILITY ENHANCEMENTS ===== */
@@ -1102,6 +1179,173 @@ function renderProducts(productsToRender) {
     // Reinitialize product modals for new cards
     initProductModal();
   }
+}
+
+/* ===== PRODUCT DETAIL PAGE FUNCTIONALITY ===== */
+function initProductDetailPage(productId) {
+  const product = products.find(p => p.id === productId);
+  if (!product) {
+    console.error('Product not found:', productId);
+    return;
+  }
+  
+  // Populate product information
+  document.getElementById('product-name').textContent = product.name;
+  document.getElementById('product-tagline').textContent = product.tagline;
+  document.getElementById('product-description').textContent = product.description;
+  document.getElementById('product-top-notes').textContent = product.topNotes;
+  document.getElementById('product-heart-notes').textContent = product.heartNotes;
+  document.getElementById('product-base-notes').textContent = product.baseNotes;
+  document.getElementById('product-longevity').textContent = product.longevity;
+  document.getElementById('product-sillage').textContent = product.sillage;
+  document.getElementById('product-gender').textContent = product.gender;
+  document.getElementById('product-breadcrumb-name').textContent = product.name;
+  
+  // Set main image
+  const mainImage = document.getElementById('main-product-image');
+  mainImage.src = product.image;
+  mainImage.alt = product.name;
+  
+  // Create thumbnail gallery
+  createThumbnailGallery(product);
+  
+  // Initialize size options
+  initSizeOptions();
+  
+  // Initialize quantity selector
+  initQuantitySelector();
+  
+  // Initialize tabs
+  initProductTabs();
+  
+  // Create mood tags
+  createMoodTags(product);
+  
+  // Load related products
+  loadRelatedProducts(product);
+}
+
+function createThumbnailGallery(product) {
+  const gallery = document.querySelector('.product__thumbnail-gallery');
+  const thumbnails = [
+    product.image,
+    product.image.replace('-1.jpg', '-2.jpg'),
+    product.image.replace('-1.jpg', '-3.jpg')
+  ];
+  
+  gallery.innerHTML = thumbnails.map((src, index) => `
+    <div class="thumbnail ${index === 0 ? 'active' : ''}" data-image="${src}">
+      <img src="${src}" alt="${product.name} view ${index + 1}" loading="lazy">
+    </div>
+  `).join('');
+  
+  // Add click events for thumbnails
+  gallery.querySelectorAll('.thumbnail').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      // Update active thumbnail
+      gallery.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      
+      // Update main image
+      const mainImage = document.getElementById('main-product-image');
+      mainImage.src = thumb.dataset.image;
+    });
+  });
+}
+
+function initSizeOptions() {
+  const sizeOptions = document.querySelectorAll('.size-option');
+  const priceDisplay = document.getElementById('product-price');
+  
+  sizeOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      // Update active size
+      sizeOptions.forEach(opt => opt.classList.remove('active'));
+      option.classList.add('active');
+      
+      // Update price display
+      priceDisplay.textContent = `$${option.dataset.price}`;
+    });
+  });
+}
+
+function initQuantitySelector() {
+  const qtyInput = document.getElementById('qty-input');
+  const qtyMinus = document.getElementById('qty-minus');
+  const qtyPlus = document.getElementById('qty-plus');
+  
+  qtyMinus.addEventListener('click', () => {
+    const currentValue = parseInt(qtyInput.value);
+    if (currentValue > 1) {
+      qtyInput.value = currentValue - 1;
+    }
+  });
+  
+  qtyPlus.addEventListener('click', () => {
+    const currentValue = parseInt(qtyInput.value);
+    if (currentValue < 10) {
+      qtyInput.value = currentValue + 1;
+    }
+  });
+}
+
+function initProductTabs() {
+  const tabButtons = document.querySelectorAll('.tab__btn');
+  const tabPanels = document.querySelectorAll('.tab__panel');
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetTab = button.dataset.tab;
+      
+      // Update active tab button
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Update active tab panel
+      tabPanels.forEach(panel => panel.classList.remove('active'));
+      document.getElementById(targetTab).classList.add('active');
+    });
+  });
+}
+
+function createMoodTags(product) {
+  const moodContainer = document.getElementById('product-moods');
+  if (product.mood && product.mood.length > 0) {
+    moodContainer.innerHTML = product.mood.map(mood => 
+      `<span class="mood-tag">${mood.charAt(0).toUpperCase() + mood.slice(1)}</span>`
+    ).join('');
+  }
+}
+
+function loadRelatedProducts(currentProduct) {
+  const relatedGrid = document.getElementById('related-products-grid');
+  const relatedProducts = products
+    .filter(p => p.id !== currentProduct.id && p.accord === currentProduct.accord)
+    .slice(0, 3);
+  
+  relatedGrid.innerHTML = relatedProducts.map(product => createProductCard(product)).join('');
+}
+
+function updateProductCardsForDetailPages() {
+  // Update existing product cards to link to product detail pages
+  setTimeout(() => {
+    const productCards = document.querySelectorAll('.product__card, .featured__card');
+    productCards.forEach(card => {
+      const productName = card.querySelector('.product__name, .featured__name')?.textContent;
+      if (productName) {
+        const product = products.find(p => p.name === productName);
+        if (product) {
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', (e) => {
+            // Prevent if clicking on a button or link
+            if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') return;
+            
+            window.location.href = `product.html?product=${product.id}`;
+          });
+        }
+      }
+    });
+  }, 500);
 }
 
 /* ===== EXPORT FOR TESTING ===== */

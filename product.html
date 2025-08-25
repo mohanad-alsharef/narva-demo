@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product Details - NARVA Luxury Fragrances">
+    <title>Product Details - NARVA</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/NARVA-LOGO.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav__logo">
+                    <a href="index.html">
+                        <img src="./assets/NARVA-LOGO.jpg" alt="NARVA" class="nav__logo-img">
+                    </a>
+                </div>
+                
+                <ul class="nav__menu" id="nav-menu">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="discovery.html" class="nav__link">Discover</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="collection.html" class="nav__link">Collection</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="faq.html" class="nav__link">FAQ</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__actions">
+                    <button class="language-toggle" id="language-toggle" data-current="en">
+                        <span class="lang-text" data-en="EN" data-ar="عربي">EN</span>
+                    </button>
+                    <button class="cart-toggle" id="cart-toggle">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                </div>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Product Detail Section -->
+        <section class="product-detail" id="product-detail">
+            <div class="container">
+                <div class="product__container">
+                    <!-- Product Images -->
+                    <div class="product__images">
+                        <div class="product__main-image">
+                            <img id="main-product-image" src="" alt="" class="product__img">
+                        </div>
+                        <div class="product__thumbnail-gallery">
+                            <!-- Thumbnails will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Product Information -->
+                    <div class="product__info">
+                        <div class="product__breadcrumb">
+                            <a href="index.html">Home</a> > 
+                            <a href="collection.html">Collection</a> > 
+                            <span id="product-breadcrumb-name">Product</span>
+                        </div>
+
+                        <h1 id="product-name" class="product__title">Product Name</h1>
+                        <p id="product-tagline" class="product__tagline">Product Tagline</p>
+                        
+                        <div class="product__rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-text">(4.8/5) 127 reviews</span>
+                        </div>
+
+                        <div class="product__price-section">
+                            <div class="price__display">
+                                <span class="price__current" id="product-price">$0</span>
+                                <span class="price__original" id="product-original-price">$0</span>
+                            </div>
+                        </div>
+
+                        <!-- Size Selection -->
+                        <div class="product__options">
+                            <div class="option-group">
+                                <label class="option-label">Size:</label>
+                                <div class="size-options">
+                                    <button class="size-option" data-size="10ml" data-price="45">
+                                        <span class="size-text">10ml</span>
+                                        <span class="size-price">$45</span>
+                                    </button>
+                                    <button class="size-option" data-size="30ml" data-price="85">
+                                        <span class="size-text">30ml</span>
+                                        <span class="size-price">$85</span>
+                                    </button>
+                                    <button class="size-option active" data-size="80ml" data-price="150">
+                                        <span class="size-text">80ml</span>
+                                        <span class="size-price">$150</span>
+                                        <span class="size-badge">Popular</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add to Cart -->
+                        <div class="product__actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn" id="qty-minus">-</button>
+                                <input type="number" class="qty-input" id="qty-input" value="1" min="1" max="10">
+                                <button class="qty-btn" id="qty-plus">+</button>
+                            </div>
+                            <button class="btn btn--primary btn--large add-to-cart" id="add-to-cart">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <!-- Product Features -->
+                        <div class="product__features">
+                            <div class="feature">
+                                <span class="feature-icon">✨</span>
+                                <span class="feature-text">Authentic & Original</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🚚</span>
+                                <span class="feature-text">Free Shipping Over $100</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🔄</span>
+                                <span class="feature-text">30-Day Return Policy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Details Tabs -->
+                <div class="product__tabs">
+                    <div class="tabs__header">
+                        <button class="tab__btn active" data-tab="description">Description</button>
+                        <button class="tab__btn" data-tab="notes">Fragrance Notes</button>
+                        <button class="tab__btn" data-tab="details">Details</button>
+                        <button class="tab__btn" data-tab="reviews">Reviews</button>
+                    </div>
+
+                    <div class="tabs__content">
+                        <div class="tab__panel active" id="description">
+                            <div class="description__content">
+                                <p id="product-description">Product description will be loaded here...</p>
+                                
+                                <div class="mood-tags" id="product-moods">
+                                    <!-- Mood tags will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab__panel" id="notes">
+                            <div class="notes__pyramid">
+                                <div class="note-level">
+                                    <h4>Top Notes</h4>
+                                    <p id="product-top-notes">Top notes...</p>
+                                </div>
+                                <div class="note-level">
+                                    <h4>Heart Notes</h4>
+                                    <p id="product-heart-notes">Heart notes...</p>
+                                </div>
+                                <div class="note-level">
+                                    <h4>Base Notes</h4>
+                                    <p id="product-base-notes">Base notes...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab__panel" id="details">
+                            <div class="details__grid">
+                                <div class="detail__item">
+                                    <span class="detail__label">Concentration:</span>
+                                    <span class="detail__value">Eau de Parfum</span>
+                                </div>
+                                <div class="detail__item">
+                                    <span class="detail__label">Longevity:</span>
+                                    <span class="detail__value" id="product-longevity">6-8 hours</span>
+                                </div>
+                                <div class="detail__item">
+                                    <span class="detail__label">Sillage:</span>
+                                    <span class="detail__value" id="product-sillage">Moderate</span>
+                                </div>
+                                <div class="detail__item">
+                                    <span class="detail__label">Gender:</span>
+                                    <span class="detail__value" id="product-gender">Unisex</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab__panel" id="reviews">
+                            <div class="reviews__section">
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="reviewer__name">Sarah M.</span>
+                                        <div class="review__rating">★★★★★</div>
+                                    </div>
+                                    <p class="review__text">"Absolutely love this fragrance! Long-lasting and gets so many compliments."</p>
+                                </div>
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="reviewer__name">Ahmed K.</span>
+                                        <div class="review__rating">★★★★☆</div>
+                                    </div>
+                                    <p class="review__text">"Great quality, exactly as described. Will definitely order again."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Products -->
+                <div class="related-products">
+                    <h3 class="section__title">You May Also Like</h3>
+                    <div class="related__grid" id="related-products-grid">
+                        <!-- Related products will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__content">
+                    <div class="footer__logo">
+                        <img src="./assets/NARVA-LOGO.jpg" alt="NARVA" class="footer__logo-img">
+                    </div>
+                    <p class="footer__description">
+                        NARVA - The Door to Memory. Luxury fragrances crafted with the finest ingredients.
+                    </p>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__group">
+                        <h4 class="footer__title">Quick Links</h4>
+                        <ul class="footer__list">
+                            <li><a href="index.html" class="footer__link">Home</a></li>
+                            <li><a href="collection.html" class="footer__link">Collection</a></li>
+                            <li><a href="about.html" class="footer__link">About</a></li>
+                            <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__group">
+                        <h4 class="footer__title">Customer Service</h4>
+                        <ul class="footer__list">
+                            <li><span class="footer__link">Shipping Info</span></li>
+                            <li><span class="footer__link">Returns</span></li>
+                            <li><span class="footer__link">Size Guide</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__group">
+                        <h4 class="footer__title">Connect</h4>
+                        <ul class="footer__list">
+                            <li><span class="footer__link">Instagram</span></li>
+                            <li><span class="footer__link">Facebook</span></li>
+                            <li><span class="footer__link">Twitter</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2024 NARVA. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
