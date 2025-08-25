@@ -808,10 +808,40 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuiz();
   initFilters();
   initMoodDiscovery();
+  initPageSpecificFeatures();
   
   // Add loading complete class
   document.body.classList.add('loaded');
 });
+
+// Initialize page-specific features
+function initPageSpecificFeatures() {
+  // Handle URL parameters for filtering
+  const urlParams = new URLSearchParams(window.location.search);
+  const filter = urlParams.get('filter');
+  
+  if (filter) {
+    // Apply filter on collection page
+    setTimeout(() => {
+      const filterButton = document.querySelector(`[data-filter="${filter}"]`);
+      if (filterButton) {
+        filterButton.click();
+      }
+    }, 100);
+  }
+  
+  // Handle quiz trigger on discovery page
+  const quizTrigger = document.getElementById('quiz-trigger');
+  if (quizTrigger) {
+    quizTrigger.addEventListener('click', function() {
+      const quizModal = document.getElementById('quiz-modal');
+      if (quizModal) {
+        quizModal.classList.add('show');
+        showQuiz();
+      }
+    });
+  }
+}
 
 /* ===== ACCESSIBILITY ENHANCEMENTS ===== */
 // Keyboard navigation for mobile menu

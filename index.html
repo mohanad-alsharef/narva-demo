@@ -30,27 +30,26 @@
         <div class="container">
             <nav class="nav">
                 <div class="nav__logo">
-                    <img src="./assets/NARVA-LOGO.jpg" alt="NARVA" class="nav__logo-img">
+                    <a href="index.html">
+                        <img src="./assets/NARVA-LOGO.jpg" alt="NARVA" class="nav__logo-img">
+                    </a>
                 </div>
                 
                 <ul class="nav__menu" id="nav-menu">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link active-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                        <a href="index.html" class="nav__link active-link" data-en="Home" data-ar="الرئيسية">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#discovery" class="nav__link" data-en="Discover" data-ar="اكتشف">Discover</a>
+                        <a href="discovery.html" class="nav__link" data-en="Discover" data-ar="اكتشف">Discover</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#collection" class="nav__link" data-en="Collection" data-ar="المجموعة">Collection</a>
+                        <a href="collection.html" class="nav__link" data-en="Collection" data-ar="المجموعة">Collection</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link" data-en="About" data-ar="حول">About</a>
+                        <a href="about.html" class="nav__link" data-en="About" data-ar="حول">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#faq" class="nav__link" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                        <a href="faq.html" class="nav__link" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
                     </li>
                 </ul>
                 
@@ -88,10 +87,10 @@
                         each crafted with the finest ingredients to create unforgettable scent experiences.
                     </p>
                     <div class="hero__cta-group">
-                        <a href="#discovery" class="hero__cta btn btn--primary">
+                        <a href="discovery.html" class="hero__cta btn btn--primary">
                             Find Your Scent
                         </a>
-                        <a href="#collection" class="hero__cta btn btn--secondary">
+                        <a href="collection.html" class="hero__cta btn btn--secondary">
                             Explore Collection
                         </a>
                     </div>
@@ -112,11 +111,6 @@
                         <p class="trust__text">100% genuine fragrances</p>
                     </div>
                     <div class="trust__item">
-                        <div class="trust__icon">🔄</div>
-                        <h3 class="trust__title">Free Returns</h3>
-                        <p class="trust__text">30-day return policy</p>
-                    </div>
-                    <div class="trust__item">
                         <div class="trust__icon">🎁</div>
                         <h3 class="trust__title">Free Sample</h3>
                         <p class="trust__text">With every purchase</p>
@@ -130,51 +124,7 @@
             </div>
         </section>
 
-        <!-- Mood Discovery Section -->
-        <section class="mood-discovery" id="discovery">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Shop by Mood</h2>
-                    <p class="section__subtitle">Discover fragrances that match your personality and occasion</p>
-                </div>
-                
-                <div class="mood__grid">
-                    <div class="mood__card" data-mood="fresh">
-                        <div class="mood__icon">🍊</div>
-                        <h3 class="mood__title">Fresh</h3>
-                        <p class="mood__description">Bright, uplifting citrus and green notes</p>
-                        <a href="#collection" class="mood__link">Explore Fresh Scents</a>
-                    </div>
-                    
-                    <div class="mood__card" data-mood="bold">
-                        <div class="mood__icon">🖤</div>
-                        <h3 class="mood__title">Bold</h3>
-                        <p class="mood__description">Confident, powerful leather and spice</p>
-                        <a href="#collection" class="mood__link">Explore Bold Scents</a>
-                    </div>
-                    
-                    <div class="mood__card" data-mood="romantic">
-                        <div class="mood__icon">🌹</div>
-                        <h3 class="mood__title">Romantic</h3>
-                        <p class="mood__description">Soft, elegant florals and vanilla</p>
-                        <a href="#collection" class="mood__link">Explore Romantic Scents</a>
-                    </div>
-                    
-                    <div class="mood__card" data-mood="oriental">
-                        <div class="mood__icon">🌌</div>
-                        <h3 class="mood__title">Oriental</h3>
-                        <p class="mood__description">Exotic, luxurious oud and amber</p>
-                        <a href="#collection" class="mood__link">Explore Oriental Scents</a>
-                    </div>
-                </div>
-                
-                <div class="discovery__cta">
-                    <a href="#quiz" class="btn btn--primary btn--large">
-                        Find Your Perfect Scent
-                    </a>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Featured Collection -->
         <section class="featured" id="featured">
@@ -243,211 +193,13 @@
             </div>
         </section>
 
-        <!-- Full Collection with Filters -->
-        <section class="collection" id="collection">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Complete Collection</h2>
-                    <p class="section__subtitle">Explore all NARVA fragrances</p>
-                </div>
-                
-                <!-- Filters -->
-                <div class="collection__filters">
-                    <div class="filter__group">
-                        <label class="filter__label">Filter by Accord:</label>
-                        <div class="filter__options">
-                            <button class="filter__option active" data-filter="all">All</button>
-                            <button class="filter__option" data-filter="fruity">Fruity</button>
-                            <button class="filter__option" data-filter="leather">Leather</button>
-                            <button class="filter__option" data-filter="oud">Oud</button>
-                            <button class="filter__option" data-filter="tobacco">Tobacco</button>
-                            <button class="filter__option" data-filter="citrus">Citrus</button>
-                            <button class="filter__option" data-filter="floral">Floral</button>
-                        </div>
-                    </div>
-                    
-                    <div class="filter__group">
-                        <label class="filter__label">Filter by Occasion:</label>
-                        <div class="filter__options">
-                            <button class="filter__option active" data-filter="all">All</button>
-                            <button class="filter__option" data-filter="everyday">Everyday</button>
-                            <button class="filter__option" data-filter="evening">Evening</button>
-                            <button class="filter__option" data-filter="special">Special Events</button>
-                            <button class="filter__option" data-filter="romantic">Romantic</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="collection__grid" id="collection-grid">
-                    <!-- Products will be dynamically loaded here -->
-                </div>
-            </div>
-        </section>
 
-        <!-- About Section -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="about__container">
-                    <div class="about__content">
-                        <h2 class="section__title">About NARVA</h2>
-                        <p class="about__text">
-                            NARVA represents the pinnacle of luxury fragrance craftsmanship. Our collection 
-                            of premium perfumes is meticulously crafted using the finest ingredients sourced 
-                            from around the world.
-                        </p>
-                        <p class="about__text">
-                            Each NARVA fragrance tells a unique story, from the bold sophistication of 
-                            NARVA Leather to the exotic allure of NARVA Ouda. We believe that fragrance 
-                            is an art form that should evoke emotions and create lasting memories.
-                        </p>
-                        <div class="about__features">
-                            <div class="about__feature">
-                                <h3 class="about__feature-title">Premium Ingredients</h3>
-                                <p class="about__feature-text">Sourced from the finest suppliers worldwide</p>
-                            </div>
-                            <div class="about__feature">
-                                <h3 class="about__feature-title">Expert Craftsmanship</h3>
-                                <p class="about__feature-text">Each fragrance carefully composed by master perfumers</p>
-                            </div>
-                            <div class="about__feature">
-                                <h3 class="about__feature-title">Luxury Experience</h3>
-                                <p class="about__feature-text">Designed to create unforgettable scent memories</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about__image">
-                        <img src="./assets/compress-images/1Z1A4972.jpg" alt="NARVA Craftsmanship" class="about__img">
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- FAQ Section -->
-        <section class="faq" id="faq">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h2>
-                    <p class="section__subtitle" data-en="Everything you need to know about NARVA fragrances" data-ar="كل ما تحتاج معرفته عن عطور نارفا">Everything you need to know about NARVA fragrances</p>
-                </div>
-                
-                <div class="faq__container">
-                    <div class="faq__item">
-                        <button class="faq__header">
-                            <span class="faq__title">What makes NARVA fragrances unique?</span>
-                            <span class="faq__icon">+</span>
-                        </button>
-                        <div class="faq__content">
-                            <p class="faq__text">
-                                NARVA fragrances are crafted with premium ingredients and expert artisanship. 
-                                Each scent is carefully composed to create a unique olfactory experience that 
-                                reflects luxury and sophistication.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq__item">
-                        <button class="faq__header">
-                            <span class="faq__title">How long do NARVA perfumes last?</span>
-                            <span class="faq__icon">+</span>
-                        </button>
-                        <div class="faq__content">
-                            <p class="faq__text">
-                                Our Eau de Parfum concentration ensures long-lasting wear, typically 6-8 hours 
-                                depending on skin type and environmental conditions. Some of our richer 
-                                compositions like NARVA Ouda can last even longer.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq__item">
-                        <button class="faq__header">
-                            <span class="faq__title">Are NARVA fragrances suitable for both men and women?</span>
-                            <span class="faq__icon">+</span>
-                        </button>
-                        <div class="faq__content">
-                            <p class="faq__text">
-                                Most of our collection features unisex fragrances designed to be enjoyed by 
-                                anyone who appreciates fine perfumery. Some scents like NARVA Layla are 
-                                specifically crafted with feminine preferences in mind.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq__item">
-                        <button class="faq__header">
-                            <span class="faq__title">What size bottles are available?</span>
-                            <span class="faq__icon">+</span>
-                        </button>
-                        <div class="faq__content">
-                            <p class="faq__text">
-                                All NARVA fragrances are available in 100ml bottles with Eau de Parfum 
-                                concentration, providing excellent value and longevity for your investment 
-                                in luxury fragrance.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq__item">
-                        <button class="faq__header">
-                            <span class="faq__title">How should I store my NARVA perfume?</span>
-                            <span class="faq__icon">+</span>
-                        </button>
-                        <div class="faq__content">
-                            <p class="faq__text">
-                                Store your perfume in a cool, dry place away from direct sunlight and 
-                                extreme temperatures. Keep the bottle upright and tightly closed to 
-                                maintain the fragrance's integrity and longevity.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
-                    <p class="section__subtitle" data-en="Get in touch for inquiries and orders" data-ar="تواصل معنا للاستفسارات والطلبات">Get in touch for inquiries and orders</p>
-                </div>
-                
-                <div class="contact__container">
-                    <div class="contact__info">
-                        <div class="contact__item">
-                            <h3 data-en="Email" data-ar="البريد الإلكتروني">Email</h3>
-                            <p>info@narva.com</p>
-                        </div>
-                        <div class="contact__item">
-                            <h3 data-en="Phone" data-ar="الهاتف">Phone</h3>
-                            <p>+966 50 123 4567</p>
-                        </div>
-                        <div class="contact__item">
-                            <h3 data-en="Address" data-ar="العنوان">Address</h3>
-                            <p data-en="Riyadh, Saudi Arabia" data-ar="الرياض، المملكة العربية السعودية">Riyadh, Saudi Arabia</p>
-                        </div>
-                    </div>
-                    
-                    <form class="contact__form" id="contact-form">
-                        <div class="form__group">
-                            <input type="text" id="name" name="name" required>
-                            <label for="name" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
-                        </div>
-                        <div class="form__group">
-                            <input type="email" id="email" name="email" required>
-                            <label for="email" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
-                        </div>
-                        <div class="form__group">
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <label for="message" data-en="Message" data-ar="الرسالة">Message</label>
-                        </div>
-                        <button type="submit" class="btn btn--primary" data-en="Send Message" data-ar="إرسال الرسالة">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
+
+
+
+
     </main>
 
     <!-- Footer -->
@@ -471,10 +223,10 @@
                 <div class="footer__links">
                     <h3 class="footer__title">Quick Links</h3>
                     <ul class="footer__list">
-                        <li><a href="#home" class="footer__link">Home</a></li>
-                        <li><a href="#collection" class="footer__link">Collection</a></li>
-                        <li><a href="#about" class="footer__link">About</a></li>
-                        <li><a href="#faq" class="footer__link">FAQ</a></li>
+                        <li><a href="index.html" class="footer__link">Home</a></li>
+                        <li><a href="collection.html" class="footer__link">Collection</a></li>
+                        <li><a href="about.html" class="footer__link">About</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
                     </ul>
                 </div>
             </div>
